@@ -416,3 +416,35 @@ footer div p{
         text-align:center;
     }
 }
+
+.modificar:hover {
+    color: #000000 !important; 
+    font-style: initial;
+    font-weight: bold;
+}
+
+.modificar{
+    background: #920797;
+    color: #ffff;
+    border-radius: 3px;
+    padding: 1px;
+    padding-right: 3px;
+    padding-left: 3px;
+    font-weight: bold;
+}
+
+.eliminar:hover {
+    color: #000000 !important; 
+    font-style: initial;
+    font-weight: bold;
+}
+
+.eliminar {
+    background: #920797;
+    color: #ffff;
+    border-radius: 3px;
+    padding: 1px;
+    padding-right: 8px;
+    padding-left: 8px;
+    font-weight: bold;
+}

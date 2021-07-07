@@ -42,7 +42,7 @@
                         </thead>
                         {% for pro in proveedores %}
                         <tbody>
-                            <tr><td>{{pro.id}}</td><td>{{pro.nombre}}</td><td><img src="{{pro.image.url}}" width="80" height="80"></td><td>{{pro.pais}}</td><td>{{pro.telefono}}</td><td>{{pro.correo}}</td><td>{{pro.direccion}}</td><td>{{pro.get_moneda_display}}</td><td>{{pro.password}}</td><td><a href="{% url 'form_mod_proveedor' pro.id %}">Modificar</a><br><a href="{% url 'form_del_proveedor' pro.id %}">Eliminar</a></td></tr>
+                            <tr><td>{{pro.id}}</td><td>{{pro.nombre}}</td><td><img src="{{pro.image.url}}" width="80" height="80"></td><td>{{pro.pais}}</td><td>{{pro.telefono}}</td><td>{{pro.correo}}</td><td>{{pro.direccion}}</td><td>{{pro.get_moneda_display}}</td><td>{{pro.password}}</td><td><a class="modificar" href="{% url 'form_mod_proveedor' pro.id %}">Modificar</a><br><a class="eliminar" href="{% url 'form_del_proveedor' pro.id %}">Eliminar</a></td></tr>
                         </tbody>
                         {% endfor %}
                     </table>
