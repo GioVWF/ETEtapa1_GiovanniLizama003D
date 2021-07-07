@@ -301,3 +301,34 @@ footer div p{
 .smallf img{
     color: #ffffff;
 }
+
+
+.formproveedor {
+    width: 400px;
+    margin: auto;
+    box-shadow: 7px 13px 37px #0c0a0a;
+    background: #0000004d;
+    box-sizing: border-box;
+    padding: 10px 30px;
+    border-radius: 30px;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #000000;
+}
+
+.tituloformp{
+    font-size: 50px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.tituloformp:hover{
+    font-size: 50px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.forms-control{
+    width: 90%;
+}

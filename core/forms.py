@@ -1,44 +1,62 @@
 from django import forms
 from .models import Proveedor
+from django.db.models import fields
+from django.forms import ModelForm, widgets
 
 class ProveedorForm(forms.ModelForm):
-    image = forms.ImageField(label='imagen',
+    id = forms.ImageField(label='Número de identificación', widget=forms.TextInput( attrs={
+        'class':'forms-control',
+        'placeholder':'Ingrese identificación',
+        'autofocus':'autofocus'
+        
+    }
+    ))
+    image = forms.ImageField(label='Imagen',
     widget=forms.ClearableFileInput(
         attrs={
-            'class':'form-control'
+            'class':'forms-control',
+            'name':'image'
         }
     ))
-    nombre = forms.CharField(label="nombre completo", max_length=80, widget=forms.TextInput(
+    nombre = forms.CharField(label="Nombre", max_length=80, widget=forms.TextInput(
         attrs={
-            'class':'forms-control'
+            'class':'forms-control',
+            'placeholder':'Ingrese nombre completo'
         }
     ))
-    telefono = forms.IntegerField(label='telefono', widget=forms.TextInput(
+    telefono = forms.CharField(max_length=12,label='Telefóno', widget=forms.TextInput(
         attrs={
-            'class':'form-control'
+            'class':'forms-control',
+            'placeholder':'Ingrese telefóno'
         }
     ))
-    correo = forms.EmailField(label="correo electrónico", widget=forms.EmailInput(
+    direccion = forms.CharField(max_length=100,label="Dirección",widget=forms.TextInput(
         attrs={
-            'class':'form-control'
+            'class':'forms-control',
+            'placeholder':'Ingrese Dirección'
+        }
+    ))
+    correo = forms.EmailField(label="Correo Electrónico", widget=forms.EmailInput(
+        attrs={
+            'class':'forms-control',
+            'placeholder':'Ingrese correo electrónico'
         }
     ))
     pais = forms.CharField(label="país", max_length=30, widget=forms.TextInput(
         attrs={
-            'class':'form-control'
+            'class':'forms-control',
+            'placeholder':'Ingrese país'
         }
     ))
-    password = forms.CharField(label="contraseña", max_length=20,widget=forms.TextInput(
+    password = forms.CharField(label="Contraseña", max_length=20,widget=forms.TextInput(
         attrs={
-            'class':'form-control'
+            'class':'forms-control',
+            'placeholder':'Ingrese contraseña'
         }
     ))
-    moneda = forms.DecimalField(label="dolares", widget=forms.TextInput(
-        attrs={
-            'class':'form-control'
-        }
-    ))
+    
 
     class Meta:
         model = Proveedor
-        fields = ('image','nombre','telefono','correo','pais','password','moneda')
+        fields = ['id','image','nombre','telefono','correo','pais','password','moneda']
+    
