@@ -8,7 +8,7 @@ opciones_moneda = [
 
 class Proveedor(models.Model):
     id = models.IntegerField(primary_key=True)
-    image = models.ImageField(upload_to='static/img/imgsubidas/', null=True, blank=True, verbose_name="image")
+    image = models.ImageField(upload_to='fotos/', null=True, blank=True, verbose_name="image")
     nombre = models.CharField(max_length=80, verbose_name="nombre")
     telefono = models.CharField(max_length=12,null=True, blank=True,verbose_name="telefono")
     direccion = models.CharField(max_length=100,verbose_name="direccion",null=True, blank=True)
@@ -18,4 +18,4 @@ class Proveedor(models.Model):
     moneda = models.IntegerField(choices= opciones_moneda)
 
     def __str__(self):
-        return self.nombre
+        return self.id

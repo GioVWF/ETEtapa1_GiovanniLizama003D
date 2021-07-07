@@ -24,14 +24,13 @@
                 </button> 
                 <div class="collapse navbar-collapse" id="botones">
                     <ul class="navbar-nav ml-auto">          
-                        <li class="nav-item"><a href="{%url 'inicio'%}" class="nav-link">Inicio</a></li>       
+                        <li class="nav-item"><a href="{%url 'inicio'%}" class="nav-link">Inicio</a></li>   
+                        <li class="nav-item"><a href="{%url 'Proveedores'%}" class="nav-link">Modificar Proveedores</a></li>      
                     </ul>
                 </div>
             </nav>      
-           
             </div>     
-              
-                  <form method="post" action="{%url 'inicio'%}" class="formproveedor">
+                  <form method="POST" class="formproveedor" enctype="multipart/form-data">
                     {% csrf_token %}
                     <h6 class="tituloformp">Proveedor</h6>
                     <br>
@@ -46,10 +45,6 @@
                     {{form.nombre.label}}
                     <br>
                     {{form.nombre}}
-                    <br>
-                    {{form.password.label}}
-                    <br>
-                    {{form.password}}
                     <br>
                     {{form.telefono.label}}
                     <br>
@@ -76,12 +71,8 @@
                     {{form.moneda}}
                     <br>
                     <br>
-                    <input type="submit" value="ENVIAR"></input>
-                  </form>
-             
-
-
-                   
+                    <button type="submit" value="ENVIAR" id='botonC'>ENVIAR</button>
+                  </form>                         
             <footer>
                 <div class="container-footer">
                     <div class="row text-center justify-content-around">

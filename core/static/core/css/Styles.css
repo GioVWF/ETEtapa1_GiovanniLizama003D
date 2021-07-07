@@ -332,3 +332,87 @@ footer div p{
 .forms-control{
     width: 90%;
 }
+
+#botonC{
+    background: #000000;
+    color: #ffff;
+    padding: 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin: auto;
+}
+
+.tablainicio table{
+    width: 80%;
+    text-align: center;
+}
+
+.tablainicio{
+    width: 100%;
+    margin: 10px;
+}
+
+.tablaproveedores {
+    margin: 10px;
+    margin-left: 10%;
+    width: 100%;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    border-collapse: collapse;
+    font-size: 1.2em;
+    border-radius: 5px 5px 0 0 ;
+    overflow: hidden;
+    box-shadow: 0 0 20px #0000006c;
+}
+
+.tablaproveedores th, td {
+    padding: 12px 15px;
+    text-align: center;
+    border-left: 1px solid;
+    border-right: 1px solid;
+}
+
+.tablaproveedores tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.tablaproveedores tbody tr:last-of-type {
+    border-bottom: 2px solid #920797;
+}
+
+.tablaproveedores tbody tr:hover {
+    font-weight: bold;
+    color: #920797;
+}
+
+.tablaproveedores thead td {
+    background-color: #9b0ea0;
+    color: white;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+    table {
+        width:100%;
+    }
+    thead {
+        display: none;
+    }
+    tr:nth-of-type(2n) {
+        background-color: inherit;
+    }
+    tr td:first-child {
+        background: #f0f0f0;
+        font-weight:bold;
+        font-size:1.3em;
+    }
+    tbody td {
+        display: block;
+        text-align:center;
+    }
+    tbody td:before {
+        content: attr(data-th);
+        display: block;
+        text-align:center;
+    }
+}

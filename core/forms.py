@@ -1,23 +1,22 @@
 from django import forms
 from .models import Proveedor
 from django.db.models import fields
-from django.forms import ModelForm, widgets
+from django.forms import ModelForm, widgets, ImageField, FileField
 
 class ProveedorForm(forms.ModelForm):
-    id = forms.ImageField(label='Número de identificación', widget=forms.TextInput( attrs={
+    id = forms.CharField(label='Número de identificación', widget=forms.TextInput( attrs={
         'class':'forms-control',
         'placeholder':'Ingrese identificación',
         'autofocus':'autofocus'
-        
     }
     ))
     image = forms.ImageField(label='Imagen',
-    widget=forms.ClearableFileInput(
-        attrs={
-            'class':'forms-control',
-            'name':'image'
-        }
-    ))
+            widget=forms.ClearableFileInput(
+            attrs={
+                'class':'forms-control',
+                'name':'image' 
+            }
+            ))
     nombre = forms.CharField(label="Nombre", max_length=80, widget=forms.TextInput(
         attrs={
             'class':'forms-control',
@@ -54,8 +53,6 @@ class ProveedorForm(forms.ModelForm):
             'placeholder':'Ingrese contraseña'
         }
     ))
-    
-
     class Meta:
         model = Proveedor
         fields = ['id','image','nombre','telefono','correo','pais','password','moneda']
